@@ -27,14 +27,10 @@ export class FaqComponent implements OnInit {
     // });
   }
 
-  showMore(event: any) {
-    // this.yes = event.currentTarget.children[1]
-    // this.yes.classList.toggle('show')
+ isReadMore = true
 
-    this.faqQuest = event.currentTarget.parentElement.children[1]
-    this.faqQuest.classList.toggle('show')
-
-    console.log(this.faqQuest)
+  showText() {
+     this.isReadMore = !this.isReadMore
   }
 
 }
