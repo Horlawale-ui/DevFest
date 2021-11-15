@@ -8,10 +8,12 @@
     <div class="faq-card">
       <div class="faq-item" *ngFor="let i of faqs">
         <div class="faq-item-top" (click)="showMore($event)">
-          <h5>{{ i.question }}</h5>
-          <i class="bx bx-chevron-down"></i>
+          <h5 [ngClass]="{'limitTextHeight': isReadMore}>{{ i.question }}</h5>
+          <i class="bx bx-chevron-down" (click)="showText()>
+            {{ isReadMore ? 'Read More': 'Read Less' }} 
+          </i>
         </div>
-        <p class="details" [class.show]="faqQuest">
+        <p class="details" [ngClass]="{'limitTextHeight': isReadMore}>
           {{ i.answer }}
         </p>
       </div>
